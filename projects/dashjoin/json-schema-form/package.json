@@ -17,11 +17,13 @@
     "autocomplete",
     "json pointer"
   ],
+  "dependencies": {
+    "tslib": "^2.1.0"
+  },
   "peerDependencies": {
-    "@angular/common": "^9.0.5",
-    "@angular/core": "^9.0.5",
-    "json-logic-js": "^2.0.0",
-    "tslib": "^1.10.0"
+    "@angular/common": "^11.0.0",
+    "@angular/core": "^11.0.0",
+    "json-logic-js": "^2.0.0"
   },
   "sideEffects": true
 }

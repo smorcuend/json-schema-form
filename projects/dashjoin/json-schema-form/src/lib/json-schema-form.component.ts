@@ -537,7 +537,13 @@ export class JsonSchemaFormComponent implements OnInit, OnChanges {
    */
   remove(i: number) {
     const el = this.value.splice(i, 1);
-    this.emitDeletion(el);
+    const field = {
+      isRoot: this.isRoot,
+      name: this.name,
+      schema: this.schema,
+      label: this.label,
+    };
+    this.emitDeletion({field, element: el});
     this.emit(this.value);
   }
 
@@ -546,6 +552,13 @@ export class JsonSchemaFormComponent implements OnInit, OnChanges {
    */
   removeField(key: string) {
     delete this.value[key];
+    const field = {
+      isRoot: this.isRoot,
+      name: this.name,
+      schema: this.schema,
+      label: this.label,
+    };
+    this.emitDeletion({field, element: key});
     this.emit(this.value);
   }
 
